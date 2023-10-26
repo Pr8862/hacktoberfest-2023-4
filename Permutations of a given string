@@ -1,0 +1,27 @@
+Given a string S. The task is to print all unique permutations of the given string in lexicographically sorted order.
+
+Example 1:
+
+Input: ABC
+Output:
+ABC ACB BAC BCA CAB CBA
+Explanation:
+Given string ABC has permutations in 6 
+forms as ABC, ACB, BAC, BCA, CAB and CBA .
+
+
+
+from itertools import permutations
+
+def unique_permutations(s):
+    # Use set to store unique permutations
+    unique_perms = set(permutations(s))
+    
+    # Sort the permutations and print them
+    for perm in sorted(unique_perms):
+        print("".join(perm), end=" ")
+
+# Example usage:
+input_str = "ABC"
+print("Unique Permutations of", input_str, "in lexicographically sorted order:")
+unique_permutations(input_str)
